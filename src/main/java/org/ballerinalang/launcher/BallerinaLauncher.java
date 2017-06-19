@@ -44,10 +44,10 @@ public class BallerinaLauncher {
 
     private static final Logger breLog = LoggerFactory.getLogger(BallerinaLauncher.class);
 
-    public BallerinaLauncher() {
+    public BallerinaLauncher(String file) {
         try {
-            Optional<BLauncherCmd> optionalInvokedCmd = getInvokedCmd("run","main", "../test.bal");
-            LauncherUtils.writePID("/home/fathima/ballerina-self-tuning/ballerina-0.88-SNAPSHOT");
+            Optional<BLauncherCmd> optionalInvokedCmd = getInvokedCmd("run","main", file);
+            //LauncherUtils.writePID("/home/fathima/ballerina-self-tuning/ballerina-0.88-SNAPSHOT");
             optionalInvokedCmd.ifPresent(BLauncherCmd::execute);
         } catch (ParserException | SemanticException | BLangRuntimeException e) {
             outStream.println(e.getMessage());
