@@ -8,7 +8,7 @@ This repository contains the micro benchmark used to get the performance number 
 
 The micro benchmark was built on top of Java Microbenchmark Harness (jmh).
 
-In order to resolve dependencies, you will first have to build ballerina-core found in .. first.
+In order to resolve dependencies, you will first have to build ballerina-core found in https://github.com/ballerinalang/ballerina first.
 
 Once done, build the benchmarks and make sure all dependencies are resolved. 
 
