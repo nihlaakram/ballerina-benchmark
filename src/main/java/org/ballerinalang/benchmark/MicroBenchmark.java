@@ -42,71 +42,38 @@ public class MicroBenchmark {
 
 
     @State(Scope.Benchmark)
-    public static class Bal100 {
-        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/Arr100.bal");
+    public static class BallerinaMultple10 {
+        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/multipleArr10.bal");
     }
-//
+    //
     @State(Scope.Benchmark)
-    public static class Bal101 {
-        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/Arr101.bal");
-    }
-
-    @State(Scope.Benchmark)
-    public static class Bal1000 {
-        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/Arr1000.bal");
+    public static class BallerinaMultple100 {
+        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/multipleArr100.bal");
     }
 
     @State(Scope.Benchmark)
-    public static class Bal1001 {
-        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/Arr1001.bal");
+    public static class BallerinaMultple1000 {
+        static BallerinaLauncher ballerinaLauncher = new BallerinaLauncher("src/ballerina/multipleArr1000.bal");
     }
 
+
     @Benchmark
-    public void balMethod100(Bal100 bal1) {
+    public void ballerinaMultple10(BallerinaMultple10 bal1) {
         BProgmRunner.runProgram();
     }
 
     @Benchmark
-    public void javaMethod100(Blackhole blackhole) {
-        int [] array = new int[100];
-        array[99] = 0;
-        blackhole.consume(array);
-    }
-
-    @Benchmark
-    public void balMethod101(Bal101 bal1) {
+    public void ballerinaMultple100(BallerinaMultple100 bal1) {
         BProgmRunner.runProgram();
     }
 
-//    @Benchmark
-//    public void javaMethod101(Blackhole blackhole) {
-//        int [] array = new int[1000];
-//        array[101] = 0;
-//        blackhole.consume(array);
-//    }
 
     @Benchmark
-    public void balMethod1000(Bal1000 bal1) {
+    public void ballerinaMultple1000(BallerinaMultple1000 bal1) {
         BProgmRunner.runProgram();
     }
 
-//    @Benchmark
-//    public void javaMethod1000(Blackhole blackhole) {
-//        int [] array = new int[1000];
-//        array[999] = 0;
-//        blackhole.consume(array);
-//    }
 
-    @Benchmark
-    public void balMethod1001(Bal1001 bal1) {
-        BProgmRunner.runProgram();
-    }
 
-//    @Benchmark
-//    public void javaMethod1001(Blackhole blackhole) {
-//        int [] array = new int[1100];
-//        array[1001] = 0;
-//        blackhole.consume(array);
-//    }
 
 }
